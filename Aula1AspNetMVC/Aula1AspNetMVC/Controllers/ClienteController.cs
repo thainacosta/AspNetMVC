@@ -34,5 +34,21 @@ namespace Aula1AspNetMVC.Controllers
 
             return View(listaCliente);
         }
+
+        public ActionResult Pesquisa(int? id)
+        {
+            var listaCliente = new List<Cliente>()
+            {
+                new Cliente(){ Nome = "Renan", SobreNome = "Rodrigues", DataCadastro = DateTime.Now, Id = 1},
+                new Cliente(){ Nome = "Joao", SobreNome = "Silva", DataCadastro = DateTime.Now, Id = 2},
+                new Cliente(){ Nome = "Eduardo", SobreNome = "Pires", DataCadastro = DateTime.Now, Id = 3},
+                new Cliente(){ Nome = "Manoel", SobreNome = "Santos", DataCadastro = DateTime.Now, Id = 4}
+            };
+
+            var cliente = listaCliente.Where(c => c.Id == id).ToList();
+
+
+            return View("Lista", cliente);
+        }
     }
 }
