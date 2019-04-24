@@ -35,7 +35,7 @@ namespace Aula1AspNetMVC.Controllers
             return View(listaCliente);
         }
 
-        public ActionResult Pesquisa(int? id)
+        public ActionResult Pesquisa(int? id, string nome)
         {
             var listaCliente = new List<Cliente>()
             {

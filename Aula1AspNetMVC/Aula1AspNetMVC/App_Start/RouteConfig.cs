@@ -11,6 +11,16 @@ namespace Aula1AspNetMVC
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapRoute(
+                name: "Secundaria",
+                url: "{controller}/{action}/{id}/{nome}",
+                defaults: new
+                {
+                    controller = "Home",
+                    action = "Index"                   
+                }
+            );
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
