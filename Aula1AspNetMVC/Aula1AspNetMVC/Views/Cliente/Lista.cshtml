@@ -9,3 +9,16 @@
 {
 <li>@Html.DisplayFor(model => cliente.Nome) @Html.DisplayFor(model => cliente.SobreNome)</li>
 }
+
+
+@section scripts
+{
+<script>
+    $(document).ready(function () {
+        $("li").click(function () {
+            $(this).hide();
+        })
+    });
+
+</script> 
+}
