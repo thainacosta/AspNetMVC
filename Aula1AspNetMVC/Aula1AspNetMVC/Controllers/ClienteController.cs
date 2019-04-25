@@ -47,8 +47,17 @@ namespace Aula1AspNetMVC.Controllers
 
             var cliente = listaCliente.Where(c => c.Id == id).ToList();
 
-
+            if (!cliente.Any())
+            {
+                TempData["erro"] = "Nenhum cliente selecionado ";
+                return RedirectToAction("ErroPesquisa");
+            }
             return View("Lista", cliente);
+        }
+
+        public ActionResult ErroPesquisa()
+        {
+            return View("Error");
         }
     }
 }
